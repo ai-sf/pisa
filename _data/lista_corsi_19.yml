@@ -1,0 +1,11 @@
+- image: img/corsi/python_19.png
+  title: Python
+  info: Introduzione a Python per Laboratorio
+  url: corso_python_19
+  alt: Corso Python
+- image: img/corsi/latex_19.png
+  title: LaTeX
+  info: Introduzione a LaTeX per Relazioni
+  url: corso_latex_19
+  alt: Corso LaTeX
+

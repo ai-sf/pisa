@@ -1,4 +1,9 @@
 - text: Corsi
   url: corsi
+  subitems:
+   - text: Python
+     url: corso_python_19
+   - text: LaTeX
+     url: corso_latex_19
 - text: AISF
   url: http://www.ai-sf.it
