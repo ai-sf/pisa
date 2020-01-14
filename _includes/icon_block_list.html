@@ -1,0 +1,107 @@
+<div class="row">
+	{% for item in include.icons %}
+		{% with len = include.icons|length %}
+		{% with len1 = len|add:"-1" %}
+		{% with d03 = len|divisibleby:"3" %}
+		{% with d13 = len1|divisibleby:"3" %}
+		{% with d02 = len|divisibleby:"2" %}
+		{% with index = forloop.counter %}
+		{% if index == len1 %}
+			{% if not d03 and not d13 %}
+				<div class="col l4 offset-l4 m6 s12 center">
+					<div class="icon-block">
+						<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+						<h4 class="center">{{ item.name }}</h4>
+						<p align="center">{{ item.text }}</p>
+					</div>
+				</div>
+			{% elif d03 and not d13 %}
+				<div class="col l4 m6 s12 center">
+					<div class="icon-block">
+						<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+						<h4 class="center">{{ item.name }}</h4>
+						<p align="center">{{ item.text }}</p>
+					</div>
+				</div>
+			{% elif not d03 and d13 %}
+				<div class="col l4 m6 s12 center">
+					<div class="icon-block">
+						<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+						<h4 class="center">{{ item.name }}</h4>
+						<p align="center">{{ item.text }}</p>
+					</div>
+				</div>
+			{% endif %}
+		{% elif index == len %}
+			{% if not d03 and not d13 %}
+				{% if not d02 %}
+					<div class="col l4 m6 offset-m3 s12 center">
+						<div class="icon-block">
+							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+							<h4 class="center">{{ item.name }}</h4>
+							<p align="center">{{ item.text }}</p>
+						</div>
+					</div>
+				{% else %}
+					<div class="col l4 m6 s12 center">
+						<div class="icon-block">
+							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+							<h4 class="center">{{ item.name }}</h4>
+							<p align="center">{{ item.text }}</p>
+						</div>
+					</div>
+				{% endif %}
+			{% elif d03 and not d13 %}
+				{% if not d02 %}
+					<div class="col l4 m6 offset-m3 s12 center">
+						<div class="icon-block">
+							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+							<h4 class="center">{{ item.name }}</h4>
+							<p align="center">{{ item.text }}</p>
+						</div>
+					</div>
+				{% else %}
+					<div class="col l4 m6 s12 center">
+						<div class="icon-block">
+							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+							<h4 class="center">{{ item.name }}</h4>
+							<p align="center">{{ item.text }}</p>
+						</div>
+					</div>
+				{% endif %}
+			{% elif not d03 and d13 %}
+				{% if not d02 %}
+					<div class="col l4 offset-l4 m6 offset-m3 s12 center">
+						<div class="icon-block">
+							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+							<h4 class="center">{{ item.name }}</h4>
+							<p align="center">{{ item.text }}</p>
+						</div>
+					</div>
+				{% else %}
+					<div class="col l4 offset-l4 m6 s12 center">
+						<div class="icon-block">
+							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+							<h4 class="center">{{ item.name }}</h4>
+							<p align="center">{{ item.text }}</p>
+						</div>
+					</div>
+				{% endif %}
+			{% endif %}
+		{% else %}
+			<div class="col l4 m6 s12 center">
+				<div class="icon-block">
+					<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+					<h4 class="center">{{ item.name }}</h4>
+					<p align="center">{{ item.text }}</p>
+				</div>
+			</div>
+		{% endif %}
+		{% endwith %}
+		{% endwith %}
+		{% endwith %}
+		{% endwith %}
+		{% endwith %}
+		{% endwith %}
+	{% endfor %}
+</div>

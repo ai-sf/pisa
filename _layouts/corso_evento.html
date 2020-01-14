@@ -1,0 +1,104 @@
+---
+layout: page
+title: {{ page.title }}
+---
+
+<!--
+Usage________
+---
+layout: corso_evento
+title:
+locandina: - url:
+			 alt:
+incipit:
+icons_block_list: - name:
+					text:
+					icon:
+				  - name:
+					text:
+					icon:
+button_intro:
+button_list: - url:
+		       name:
+		       download: (boolean)
+		     - url:
+		       name:
+		       download: (boolean)
+button_collection: - url:
+					 name:
+					 text:
+					 download: yes if specified, no if not specified
+				   - url:
+					 name:
+					 text:
+					 download: yes if specified, no if not specified
+credits:
+---
+-->
+
+{% if page.locandina %}
+<div class="row">
+	<div class="col l8 offset-l2 m8 offset-m2 s8 offset-s2">
+		<img src="{{ site.url }}/{{ page.locandina.url }}" alt="{{ page.locandina.alt }}">
+	</div>
+</div>
+{% endif %}
+
+{% if page.incipit %}
+<div class="row">
+	<div class="col s8 offset-s2" style="text-align:justify">
+		<b>{{ page.incipit }}</b></br>
+	</div>
+</div>
+{% endif %}
+
+{% if page.icon_block_list %}
+	{% include icon_block_list.html icons=icon_block_list %}
+{% endif %}
+
+{% if page.button_list or page.button_collection or page.button_intro %}
+<div class="card horizontal">
+	<div class="card-content">
+	
+		{% if page.button_intro %}
+		<div class="row" style="text-align:justify">
+			{{ page.button_intro }}
+		</div>
+		{% endif %}
+		
+		{% if page.button_list %}
+			{% include button_list.html buttons=button_list %}
+		{% endif %}
+		
+		{% if page.button_collection %}
+		<ul class="collection">
+			{% for item in button_collection %}
+			<li>
+				<div class="row">
+					<div class="col l4 m4 s12 center">
+						{% if item.download %}
+						<a href="{{ site.url }}/{{ item.url }}" id="l1" class="btn-large waves-effect waves-light" download>{{ item.name }}</a>
+						{% else %}
+						<a href="{{ site.url }}/{{ item.url }}" id="l1" class="btn-large waves-effect waves-light">{{ item.name }}</a>
+						{% endif %}
+					</div>
+					<div class="col l8 m8 s12 center">
+						<br/>{{ item.text }}
+					</div>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+		
+	</div>
+</div>
+{% endif %}
+
+{% if page.credits %}
+<div class="row">
+	<div class="col s8 offset-s2" style="text-align:justify">
+		<i>{{ page.credits }}</i><br/><br/>
+	</div>
+</div>
+{% endif %}
