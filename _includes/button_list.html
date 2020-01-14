@@ -1,90 +1,90 @@
 <div class="row">
 	{% for item in include.buttons %}
-		{% with len = include.buttons|length %}
-		{% with len1 = len|add:"-1" %}
-		{% with d03 = len|divisibleby:"3" %}
-		{% with d13 = len1|divisibleby:"3" %}
-		{% with d02 = len|divisibleby:"2" %}
-		{% with index = forloop.counter %}
+		{% assign len = include.buttons.size %}
+		{% assign len1 = len|minus:1 %}
+		{% assign d03 = len|modulo:3 %}
+		{% assign d13 = len1|modulo:3 %}
+		{% assign d02 = len|modulo:2 %}
+		{% assign index = forloop.index %}
 		{% if index == len1 %}
-			{% if not d03 and not d13 %}
+			{% if d03!=0 and d13!=0 %}
 				<div class="col l4 offset-l4 m6 s12 center">
 					<div class="row center">
-						<a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
-						{% if item.download %} download {% endif %}
-						>{{ item.name }}</a>
-					</div>
+                                                <a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
+                                                {% if item.download %} download {% endif %}
+                                                >{{ item.name }}</a>
+                                        </div>
 				</div>
-			{% elif d03 and not d13 %}
+			{% elsif d03==0 and d13!=0 %}
 				<div class="col l4 m6 s12 center">
 					<div class="row center">
-						<a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
-						{% if item.download %} download {% endif %}
-						>{{ item.name }}</a>
-					</div>
+                                                <a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
+                                                {% if item.download %} download {% endif %}
+                                                >{{ item.name }}</a>
+                                        </div>
 				</div>
-			{% elif not d03 and d13 %}
+			{% elsif d03!=0 and d13==0 %}
 				<div class="col l4 m6 s12 center">
 					<div class="row center">
-						<a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
-						{% if item.download %} download {% endif %}
-						>{{ item.name }}</a>
-					</div>
+                                                <a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
+                                                {% if item.download %} download {% endif %}
+                                                >{{ item.name }}</a>
+                                        </div>
 				</div>
 			{% endif %}
-		{% elif index == len %}
-			{% if not d03 and not d13 %}
-				{% if not d02 %}
+		{% elsif index == len %}
+			{% if d03!=0 and d13!=0 %}
+				{% if d02!=0 %}
 					<div class="col l4 m6 offset-m3 s12 center">
 						<div class="row center">
-							<a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
-							{% if item.download %} download {% endif %}
-							>{{ item.name }}</a>
-						</div>
+                                                        <a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
+                                                        {% if item.download %} download {% endif %}
+                                                        >{{ item.name }}</a>
+                                                </div>
 					</div>
 				{% else %}
 					<div class="col l4 m6 s12 center">
 						<div class="row center">
-							<a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
-							{% if item.download %} download {% endif %}
-							>{{ item.name }}</a>
-						</div>
+                                                        <a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
+                                                        {% if item.download %} download {% endif %}
+                                                        >{{ item.name }}</a>
+                                                </div>
 					</div>
 				{% endif %}
-			{% elif d03 and not d13 %}
-				{% if not d02 %}
+			{% elsif d03==0 and d13!=0 %}
+				{% if d02!=0 %}
 					<div class="col l4 m6 offset-m3 s12 center">
 						<div class="row center">
-							<a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
-							{% if item.download %} download {% endif %}
-							>{{ item.name }}</a>
-						</div>
+                                                        <a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
+                                                        {% if item.download %} download {% endif %}
+                                                        >{{ item.name }}</a>
+                                                </div>
 					</div>
 				{% else %}
 					<div class="col l4 m6 s12 center">
 						<div class="row center">
-							<a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
-							{% if item.download %} download {% endif %}
-							>{{ item.name }}</a>
-						</div>
+                                                        <a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
+                                                        {% if item.download %} download {% endif %}
+                                                        >{{ item.name }}</a>
+                                                </div>
 					</div>
 				{% endif %}
-			{% elif not d03 and d13 %}
-				{% if not d02 %}
+			{% elsif d03!=0 and d13==0 %}
+				{% if d02!=0 %}
 					<div class="col l4 offset-l4 m6 offset-m3 s12 center">
 						<div class="row center">
-							<a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
-							{% if item.download %} download {% endif %}
-							>{{ item.name }}</a>
-						</div>
+                                                        <a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
+                                                        {% if item.download %} download {% endif %}
+                                                        >{{ item.name }}</a>
+                                                </div>
 					</div>
 				{% else %}
 					<div class="col l4 offset-l4 m6 s12 center">
 						<div class="row center">
-							<a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
-							{% if item.download %} download {% endif %}
-							>{{ item.name }}</a>
-						</div>
+                                                        <a href="{{ site.url }}/{{ item.url }}" class="btn-large waves-effect waves-light"
+                                                        {% if item.download %} download {% endif %}
+                                                        >{{ item.name }}</a>
+                                                </div>
 					</div>
 				{% endif %}
 			{% endif %}
@@ -97,11 +97,5 @@
 				</div>
 			</div>
 		{% endif %}
-		{% endwith %}
-		{% endwith %}
-		{% endwith %}
-		{% endwith %}
-		{% endwith %}
-		{% endwith %}
 	{% endfor %}
 </div>
