@@ -1,11 +1,11 @@
 <div class="row">
 	{% for item in include.icons %}
-		{% with len = include.icons|length %}
-		{% with len1 = len|add:"-1" %}
-		{% with d03 = len|divisibleby:"3" %}
-		{% with d13 = len1|divisibleby:"3" %}
-		{% with d02 = len|divisibleby:"2" %}
-		{% with index = forloop.counter %}
+		{% assign len = include.icons|length %}
+		{% assign len1 = len|add:"-1" %}
+		{% assign d03 = len|divisibleby:"3" %}
+		{% assign d13 = len1|divisibleby:"3" %}
+		{% assign d02 = len|divisibleby:"2" %}
+		{% assign index = forloop.counter %}
 		{% if index == len1 %}
 			{% if not d03 and not d13 %}
 				<div class="col l4 offset-l4 m6 s12 center">
@@ -97,11 +97,5 @@
 				</div>
 			</div>
 		{% endif %}
-		{% endwith %}
-		{% endwith %}
-		{% endwith %}
-		{% endwith %}
-		{% endwith %}
-		{% endwith %}
 	{% endfor %}
 </div>
