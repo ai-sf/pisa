@@ -1,5 +1,5 @@
 {% for item in include.cards %}
-	{% if forloop.counter0|divisibleby:2 %}
+	{% if forloop.counter0|divisibleby:"2" %}
 		<div class="row">
 	{% else %}
 		{% if forloop.first %}
@@ -28,7 +28,7 @@
 			</div>
 		</div>
 	</div>
-	{% if forloop.counter|divisibleby:2 %}
+	{% if forloop.counter|divisibleby:"2" %}
 		</div>
 	{% else %}
 		{% if forloop.last %}
