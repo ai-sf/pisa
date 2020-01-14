@@ -20,10 +20,10 @@ icons_block_list: - name:
 button_intro:
 button_list: - url:
 		       name:
-		       download: (boolean)
+		       download: yes if specified, no if not specified
 		     - url:
 		       name:
-		       download: (boolean)
+		       download: yes if specified, no if not specified
 button_collection: - url:
 					 name:
 					 text:
@@ -55,6 +55,8 @@ credits:
 {% if page.icon_block_list %}
 	{% include icon_block_list.html icons=icon_block_list %}
 {% endif %}
+
+{{ content }}
 
 {% if page.button_list or page.button_collection or page.button_intro %}
 <div class="card horizontal">
