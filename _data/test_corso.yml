@@ -1,5 +1,6 @@
-locandina: - url: img/corsi/python_19.png
-			 alt: Locandina Corso Python
+locandina: 
+	- url: img/corsi/python_19.png
+	  alt: Locandina Corso Python
 incipit: Visto il successo dell'edizione passata, anche quest'anno tornano le 4 Brevi Lezioni di Python!
 icons_block_list: - name: Obiettivo
 					text: Dalle basi del linguaggio di programmazione Python ad alcune semplici applicazioni in analisi dati, con un occhio di riguardo al corso di Laboratorio 1
