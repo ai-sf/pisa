@@ -8,7 +8,7 @@
 		{% assign index = forloop.index %}
 		{% if index == len1 %}
 			{% if d03!=0 and d13!=0 %}
-				<div class="col l4 offset-l4 m6 s12 center">
+				<div class="col l4 offset-l2 m6 s12 center">
 					<div class="icon-block">
 						<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
 						<h4 class="center">{{ item.name }}</h4>
@@ -71,7 +71,7 @@
 				{% endif %}
 			{% elsif d03!=0 and d13==0 %}
 				{% if d02!=0 %}
-					<div class="col l4 offset-l4 m6 offset-m3 s12 center">
+					<div class="col l4 offset-l2 m6 offset-m3 s12 center">
 						<div class="icon-block">
 							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
 							<h4 class="center">{{ item.name }}</h4>
@@ -79,7 +79,7 @@
 						</div>
 					</div>
 				{% else %}
-					<div class="col l4 offset-l4 m6 s12 center">
+					<div class="col l4 offset-l2 m6 s12 center">
 						<div class="icon-block">
 							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
 							<h4 class="center">{{ item.name }}</h4>
