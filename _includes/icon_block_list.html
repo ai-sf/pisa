@@ -4,11 +4,10 @@
 		{% assign len1 = len|minus:1 %}
 		{% assign d03 = len|modulo:3 %}
 		{% assign d13 = len1|modulo:3 %}
-		{% assign d02 = len|modulo:2 %}
 		{% assign index = forloop.index %}
 		{% if index == len1 %}
 			{% if d03!=0 and d13!=0 %}
-				<div class="col l4 offset-l2 m6 s12 center">
+				<div class="col l4 offset-l2 m4 offset-m2 s12 center">
 					<div class="icon-block">
 						<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
 						<h4 class="center">{{ item.name }}</h4>
@@ -16,7 +15,7 @@
 					</div>
 				</div>
 			{% elsif d03==0 and d13!=0 %}
-				<div class="col l4 m6 s12 center">
+				<div class="col l4 m4 s12 center">
 					<div class="icon-block">
 						<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
 						<h4 class="center">{{ item.name }}</h4>
@@ -24,7 +23,7 @@
 					</div>
 				</div>
 			{% elsif d03!=0 and d13==0 %}
-				<div class="col l4 m6 s12 center">
+				<div class="col l4 m4 s12 center">
 					<div class="icon-block">
 						<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
 						<h4 class="center">{{ item.name }}</h4>
@@ -34,62 +33,32 @@
 			{% endif %}
 		{% elsif index == len %}
 			{% if d03!=0 and d13!=0 %}
-				{% if d02!=0 %}
-					<div class="col l4 m6 offset-m3 s12 center">
-						<div class="icon-block">
-							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
-							<h4 class="center">{{ item.name }}</h4>
-							<p align="center">{{ item.text }}</p>
-						</div>
-					</div>
-				{% else %}
-					<div class="col l4 m6 s12 center">
-						<div class="icon-block">
-							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
-							<h4 class="center">{{ item.name }}</h4>
-							<p align="center">{{ item.text }}</p>
-						</div>
-					</div>
-				{% endif %}
+                                <div class="col l4 m4 s12 center">
+                                        <div class="icon-block">
+                                                <h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+                                                <h4 class="center">{{ item.name }}</h4>
+                                                <p align="center">{{ item.text }}</p>
+                                        </div>
+                                </div>
 			{% elsif d03==0 and d13!=0 %}
-				{% if d02!=0 %}
-					<div class="col l4 m6 offset-m3 s12 center">
-						<div class="icon-block">
-							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
-							<h4 class="center">{{ item.name }}</h4>
-							<p align="center">{{ item.text }}</p>
-						</div>
-					</div>
-				{% else %}
-					<div class="col l4 m6 s12 center">
-						<div class="icon-block">
-							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
-							<h4 class="center">{{ item.name }}</h4>
-							<p align="center">{{ item.text }}</p>
-						</div>
-					</div>
-				{% endif %}
+				<div class="col l4 m4 s12 center">
+                                        <div class="icon-block">
+                                                <h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+                                                <h4 class="center">{{ item.name }}</h4>
+                                                <p align="center">{{ item.text }}</p>
+                                        </div>
+                                </div>
 			{% elsif d03!=0 and d13==0 %}
-				{% if d02!=0 %}
-					<div class="col l4 offset-l2 m6 offset-m3 s12 center">
-						<div class="icon-block">
-							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
-							<h4 class="center">{{ item.name }}</h4>
-							<p align="center">{{ item.text }}</p>
-						</div>
-					</div>
-				{% else %}
-					<div class="col l4 offset-l2 m6 s12 center">
-						<div class="icon-block">
-							<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
-							<h4 class="center">{{ item.name }}</h4>
-							<p align="center">{{ item.text }}</p>
-						</div>
-					</div>
-				{% endif %}
+                                <div class="col l4 offset-l2 m4 offset-m2 s12 center">
+                                        <div class="icon-block">
+                                                <h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
+                                                <h4 class="center">{{ item.name }}</h4>
+                                                <p align="center">{{ item.text }}</p>
+                                        </div>
+                                </div>
 			{% endif %}
 		{% else %}
-			<div class="col l4 m6 s12 center">
+			<div class="col l4 m4 s12 center">
 				<div class="icon-block">
 					<h4 class="center"><i class="medium material-icons custom1-text">{{ item.icon }}</i></h4>
 					<h4 class="center">{{ item.name }}</h4>
@@ -97,5 +66,9 @@
 				</div>
 			</div>
 		{% endif %}
+                {% if index|modulo:3 == 0 and index!=len %}
+                        </div>
+                        <div class="row">
+                {% endif %}
 	{% endfor %}
 </div>
