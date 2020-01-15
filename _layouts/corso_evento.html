@@ -3,6 +3,57 @@ layout: page
 title: {{ page.title }}
 ---
 
+<!--
+Esempio di utilizzo (tutti i campi principali sono opzionali)
+
+ATTENZIONE! Le stringhe che contengono : ' -  vanno messe tra doppie virgolette "". 
+Se invece ho nel testo delle " allora uso '' per contenerlo.
+
+Le liste possono avere un numero arbitrario di elementi (<50), basta aggiungerne con la stessa sintassi.
+
+ATTENZIONE!!!! Gli spazi sono importanti per separare i blocchi (per sicurezza usare questo esempio) 
+e MAI USARE TAB, SOLO SPAZI.
+
+Tutti gli url sono relativi alla cartella principale di Github (es. url: downloads/latex_19/Pillole_di_LaTeX_I.pdf )
+
+Per una lista delle icone da mettere nel campo icon: https://material.io/resources/icons/?style=baseline
+
+---
+layout: corso_evento
+title: 
+locandina: 
+           url: 
+           alt: 
+incipit: 
+icon_block_list:
+                  - name: 
+                    text: 
+                    icon: vedi sopra per una lista
+                  - name: 
+                    text: 
+                    icon: 
+button_intro: 
+button_list: 
+             - url: 
+               name: 
+               download: attivo se impostato, non attivo se non specificato
+             - url: 
+               name: 
+               download: 
+button_collection: 
+                   - url: 
+                     name: 
+                     text: 
+                     download: 
+                   - url: 
+                     name: 
+                     text: 
+                     download: 
+---
+
+
+-->
+
 {% if page.locandina %}
 <div class="row">
 	<div class="col l8 offset-l2 m8 offset-m2 s8 offset-s2">
