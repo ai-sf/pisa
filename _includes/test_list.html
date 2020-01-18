@@ -1,4 +1,4 @@
-{% increment counter0 %}
+{% assign counter0 = 0 %}
 {% if include.filter %}
 	{% assign filter=include.filter %}
 	{% assign filterv=include.filter_value %}
@@ -14,7 +14,7 @@
 		{% if counter0|divisibleby:2 %}
 			a
 		{% endif %}
-		{% increment counter0 %}
+		{% assign counter0 = counter0|add:1 %}
 		{% if counter0|divisibleby:2 or forloop.last==true %}
 			b
 		{% endif %}
