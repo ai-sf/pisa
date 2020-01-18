@@ -15,7 +15,7 @@
 			a
 		{% endif %}
 		{% assign counter0 = counter0|plus:1 %}
-		{% if counter0|divisibleby:2 or forloop.last==true %}
+		{% if counter0|divisibleby:2 %}
 			b
 		{% endif %}
 	{% endif %}
