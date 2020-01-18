@@ -1,7 +1,7 @@
 - text: Eventi
   url: eventi
   subitems: 
-   - text: Summerschool
+   - text: "<small>Summerschool</small>"
      url: summerschool_20
 - text: Corsi
   url: corsi

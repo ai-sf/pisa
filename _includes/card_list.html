@@ -1,16 +1,14 @@
 {% assign counter0=0 %}
+{% if include.filter %}
+	{% assign filter=include.filter %}
+	{% assign filterv=include.filter_value %}
+{% else %}
+	{% assign filter="none" %}
+	{% assign filterv="true" %}
+{% endif %}
 
 {% for item in include.cards %}
-	
-	{% if include.filter %}
-		{% assign filter=include.filter %}
-		{% assign filterv=include.filter_value %}
-	{% else %}
-		{% assign filter="none" %}
-		{% assign filterv="true" %}
-	{% endif %}
-	
-	{% if filter=="none" or item.filter==filterv %}
+	{% if filter=="none" or item[filter]==filterv %}
 		{% if counter0|divisibleby:"2" %}
 			<div class="row">
 		{% else %}
