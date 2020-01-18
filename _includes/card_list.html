@@ -1,4 +1,4 @@
-{% assign counter0=0 %}
+{% assign counter0 = 0 %}
 {% if include.filter %}
 	{% assign filter=include.filter %}
 	{% assign filterv=include.filter_value %}
@@ -9,12 +9,9 @@
 
 {% for item in include.cards %}
 	{% if filter=="none" or item[filter]==filterv %}
-		{% if counter0|divisibleby:"2" %}
+		{% assign c0mod = counter0|modulo:2 %}
+		{% if c0mod == 0 %}
 			<div class="row">
-		{% else %}
-			{% if forloop.first %}
-				<div class="row">
-			{% endif %}
 		{% endif %}
 		<div class="col s12 m6 l6">
 			<div class="card horizontal">
@@ -38,13 +35,10 @@
 				</div>
 			</div>
 		</div>
-		{% capture _ %}{% increment counter0 %}{% endcapture %}
-		{% if counter0|divisibleby:"2" %}
+		{% assign counter0 = counter0|plus:1 %}
+		{% assign c0mod = counter0|modulo:2 %}
+		{% if c0mod == 0 or forloop.rindex0 == 0 %}
 			</div>
-		{% else %}
-			{% if forloop.last %}
-				</div>
-			{% endif %}
 		{% endif %}
 	{% endif %}
 {% endfor %}
