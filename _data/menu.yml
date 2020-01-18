@@ -1,3 +1,8 @@
+- text: Eventi
+  url: eventi
+  subitems: 
+   - text: Summerschool
+     url: summerschool_20
 - text: Corsi
   url: corsi
   subitems:
@@ -5,7 +10,7 @@
      url: corso_python_19
    - text: LaTeX
      url: corso_latex_19
-- text: AISF
+- text: Sito Nazionale
   url: http://www.ai-sf.it
 - text: Contatti
   url: contatti
