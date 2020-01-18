@@ -11,12 +11,14 @@
 {% for item in include.cards %}
 	":"{{ counter0 }}
 	{% if filter=="none" or item[filter]==filterv %}
-		{% if counter0|modulo:2 == 0 %}
+		{% assign c0mod = counter0|modulo:2 %}
+		{% if c0mod == 0 %}
 			a
 		{% endif %}
 		{% assign counter0 = counter0|plus:1 %}
-		{% if counter0|modulo:2 == 0 or forloop.last %}
-			b{{ counter0|modulo:2 }}
+		{% assign c0mod = counter0|modulo:2 %}
+		{% if c0mod == 0 or forloop.rindex0 == 0 %}
+			b{{ c0mod }}b
 		{% endif %}
 	{% endif %}
 {% endfor %}
