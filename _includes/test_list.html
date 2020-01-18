@@ -1,0 +1,22 @@
+{% assign counter0=0 %}
+{% if include.filter %}
+	{% assign filter=include.filter %}
+	{% assign filterv=include.filter_value %}
+{% else %}
+	{% assign filter="none" %}
+	{% assign filterv="true" %}
+{% endif %}
+{{ filter }}
+{{ filterv }}
+{% for item in include.cards %}
+	{{ forloop.counter0 }}":"{{ counter0 }}
+	{% if filter=="none" or item[filter]==filterv %}
+		{% if counter0|divisibleby:2 %}
+			a
+		{% endif %}
+		{% capture _ %}{% increment counter0 %}{% endcapture %}
+		{% if counter0|divisibleby:2 or forloop.last==true %}
+			b
+		{% endif %}
+	{% endif %}
+{% endfor %}
