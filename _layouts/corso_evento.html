@@ -49,6 +49,10 @@ button_collection:
                      name: 
                      text: 
                      download: 
+social:
+        instagram:
+		facebook:
+credits: 
 ---
 
 
@@ -114,6 +118,25 @@ button_collection:
 		
 	</div>
 </div>
+{% endif %}
+
+{% if page.social %}
+	<div class="row">
+		<div class="col l3 offset-l3 m3 offset-m3 s4 offset-s2">
+			{% if page.social.facebook %}
+				<a href="{{ page.social.facebook }}" class="fa fa-facebook fa-5x"></a>
+			{% else %}
+				<a href="{{ site.data.generic.facebook_url }}" class="fa fa-instagram fa-5x"></a>
+			{% endif %}
+		</div>
+		<div class="col l3 m3 s4">
+			{% if page.social.instagram %}
+				<a href="{{ page.social.instagram }}" class="fa fa-instagram fa-5x"></a>
+			{% else %}
+				<a href="{{ site.data.generic.instagram_url }}" class="fa fa-instagram fa-5x"></a>
+			{% endif %}
+		</div>
+	</div>
 {% endif %}
 
 {% if page.credits %}
