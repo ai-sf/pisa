@@ -7,10 +7,13 @@
 	{% assign filterv="true" %}
 {% endif %}
 
+{% assign empty=true %}
+
 {% for item in include.cards %}
 	{% if filter=="none" or item[filter]==filterv %}
 		{% assign c0mod = counter0|modulo:2 %}
 		{% if c0mod == 0 %}
+			{% assign empty=false %}
 			<div class="row">
 		{% endif %}
 		<div class="col s12 m6 l6">
@@ -37,8 +40,13 @@
 		</div>
 		{% assign counter0 = counter0|plus:1 %}
 		{% assign c0mod = counter0|modulo:2 %}
-		{% if c0mod == 0 or forloop.last == true %}
+		{% if c0mod == 0 %}
+			{% assign empty=true %}
 			</div>
 		{% endif %}
 	{% endif %}
 {% endfor %}
+
+{% if empty==false %}
+	</div>
+{% endif %}
