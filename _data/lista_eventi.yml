@@ -4,4 +4,10 @@
   url: summerschool_20
   alt: Evento Summerschool
   live: "true"
+- image: img/eventi/fisica_al_pub_19-20_1.png
+  title: Fisica al Pub - Quantum Gravity
+  info: I grandi temi della Fisica moderna raccontati apertamente davanti a una birra
+  url: fisica_al_pub_19-20_1
+  alt: Fisica al Pub
+  live: "false"
 
