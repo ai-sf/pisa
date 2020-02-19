@@ -1,8 +1,8 @@
 - text: Eventi
   url: eventi
   subitems: 
-   - text: "<small>Summerschool</small>"
-     url: summerschool_20
+   - text: "<small>Fisica al Pub</small>"
+     url: fisica_al_pub_19-20_2
 - text: Corsi
   url: corsi
   subitems:
