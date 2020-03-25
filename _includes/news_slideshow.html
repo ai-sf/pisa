@@ -14,7 +14,7 @@
         {% for slide in sorted_slides %}
             <li>
                 <img src="{{ site.url }}/{{ slide.image }}" alt="{{ slide.alt }}" style="background-position:center top;">
-                <div class="caption left-align" style="top:5%;left:0%;padding-left:5%;width:80%;background: rgba(0, 0, 0, 0.7);">
+                <div class="caption left-align" style="bottom:5%;left:0%;padding-left:5%;padding:right:5%;width:auto;background: rgba(0, 0, 0, 0.7);">
                     <a href="{{ site.url }}/{{ slide.url }}" style="color:#fff"><h4>{{ slide.title }}</h4></a>
                     <p class="light grey-text text-lighten-3">{{ slide.info }}</p>
                 </div>
