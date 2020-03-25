@@ -3,9 +3,12 @@
   info: Introduzione a Python per Laboratorio
   url: corso_python_19
   alt: Corso Python
+  date: "2019-10-23"
+  year: "19"
 - image: img/corsi/latex_19.png
   title: LaTeX
   info: Introduzione a LaTeX per Relazioni
   url: corso_latex_19
   alt: Corso LaTeX
-
+  date: "2019-11-15"
+  year: "19"

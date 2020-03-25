@@ -3,17 +3,20 @@
   info: I grandi temi della Fisica moderna raccontati apertamente davanti a una birra
   url: fisica_al_pub_19-20_2
   alt: Fisica al Pub - Sistemi Disordinati
+  date: "2020-02-28"
   live: "true"
 - image: img/eventi/summerschool_20.png
   title: Let's talk about Summerschool!
   info: L'esperienza delle summerchool raccontata direttamente dagli studenti
   url: summerschool_20
   alt: Evento Summerschool
+  date: "2020-01-22"
   live: "false"
 - image: img/eventi/fisica_al_pub_19-20_1.png
   title: Fisica al Pub - Quantum Gravity
   info: I grandi temi della Fisica moderna raccontati apertamente davanti a una birra
   url: fisica_al_pub_19-20_1
   alt: Fisica al Pub - Quantum Gravity
+  date: "2019-11-28"
   live: "false"
 

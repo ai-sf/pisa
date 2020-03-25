@@ -1,0 +1,28 @@
+{% if include.sort %}
+    {% if include.reverse %}
+        {% assign sorted_slides = include.slides | sort:include.sort | reverse %}
+    {% else %}
+        {% assign sorted_slides = include.slides | sort:include.sort %}
+    {% endif %}
+{% else %}
+    {% assign sorted_slides = include.slides %}
+{% endif %}
+
+{% assign counter0 = 0 %}
+<div class="slider">
+    <ul class="slides">
+        {% for slide in sorted_slides %}
+            <li>
+                <img src="{{ site.url }}/{{ slide.image }}" alt="{{ slide.alt }}">
+                <div class="caption left-align">
+                    <h4>{{ slide.title }}</h4>
+                    <p class="light grey-text text-lighten-3">{{ slide.info }}</p>
+                </div>
+            </li>
+            {% assign counter0 = counter0|plus:1 %}
+            {% if counter0==include.nmax %} 
+                {% break %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
