@@ -6,10 +6,10 @@ layout: default
     <!-- paragraph -->
     <div class="section">
       <div class="row">
-        <div class="col l6 m6 s12">
+        <div class="col l4 m12 s12">
           <p class="center">{{ site.data.home.paragraph }}</p>
         </div>
-        <div class="col l6 m6 s12">
+        <div class="col l8 m12 s12">
           {% assign all = site.data.lista_eventi| concat: site.data.lista_corsi %}
           {% include news_slideshow.html slides=all sort="date" reverse="true" nmax=4 %}
         </div>
