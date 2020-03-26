@@ -251,6 +251,7 @@
             }
             swipeLeft = false;
             swipeRight = false;
+            scrolling = false;
 
             // Restart interval
             clearInterval($interval);
