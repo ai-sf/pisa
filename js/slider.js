@@ -170,7 +170,7 @@
         var swipeRight = false;
 
         $this.hammer({
-            prevent_default: false, touch-action: 'pan-y'
+            prevent_default: false
         }).bind('pan', function(e) {
           if (e.gesture.pointerType === "touch") {
 
@@ -179,6 +179,7 @@
 
             var direction = e.gesture.direction;
             var x = e.gesture.deltaX;
+            var y = e.gesture.deltaY;
             var velocityX = e.gesture.velocityX;
 
             $curr_slide = $slider.find('.active');
@@ -186,11 +187,11 @@
                 }, {duration: 50, queue: false, easing: 'easeOutQuad'});
 
             // Swipe Left
-            if (direction === 4 && (x > ($this.innerWidth() / 2) || velocityX < -0.65)) {
+            if ((direction === 4 && (x > ($this.innerWidth() / 2) && x*x > y*y) || velocityX < -0.65)) {
               swipeRight = true;
             }
             // Swipe Right
-            else if (direction === 2 && (x < (-1 * $this.innerWidth() / 2) || velocityX > 0.65)) {
+            else if ((direction === 2 && (x < (-1 * $this.innerWidth() / 2) && x*x > y*y) || velocityX > 0.65)) {
               swipeLeft = true;
             }
 
