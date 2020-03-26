@@ -170,7 +170,7 @@
         var swipeRight = false;
 
         $this.hammer({
-            prevent_default: false
+            prevent_default: false, touch-action: 'pan-y'
         }).bind('pan', function(e) {
           if (e.gesture.pointerType === "touch") {
 
