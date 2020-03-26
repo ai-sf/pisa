@@ -230,7 +230,7 @@
             panning = false;
             curr_index = $slider.find('.active').index();
 
-            if (!swipeRight && !swipeLeft || $slides.length <=1) {
+            if (!swipeRight && !swipeLeft && !scrolling || $slides.length <=1) {
               // Return to original spot
               $curr_slide.velocity({ translateX: 0
                   }, {duration: 300, queue: false, easing: 'easeOutQuad'});
