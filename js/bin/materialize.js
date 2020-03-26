@@ -3825,6 +3825,7 @@ $(document).ready(function(){
           var direction = e.gesture.direction;
           var x = e.gesture.deltaX;
           var velocityX = e.gesture.velocityX;
+          var y = e.gesture.deltaY;
 
           $this.velocity({ translateX: x
               }, {duration: 50, queue: false, easing: 'easeOutQuad'});
@@ -3837,6 +3838,11 @@ $(document).ready(function(){
           // Swipe Right
           if (direction === 2 && (x < (-1 * $this.innerWidth() / 2) || velocityX > 0.75)) {
             swipeRight = true;
+          }
+          
+          if (Math.abs(y) > Math.abs(x)) {
+            swipeLeft = false;
+            swipeRight = false;
           }
         }
       }).bind('panend', function(e) {
