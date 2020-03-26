@@ -168,6 +168,7 @@
         var panning = false;
         var swipeLeft = false;
         var swipeRight = false;
+        var scrolling = false;
 
         $this.hammer({
             prevent_default: false
@@ -185,13 +186,18 @@
             $curr_slide = $slider.find('.active');
             $curr_slide.velocity({ translateX: x
                 }, {duration: 50, queue: false, easing: 'easeOutQuad'});
-
+            
+            //Detect Vertical Scrolling
+            if (Math.abs(x) < Math.abs(y)) {
+                scrolling = true;
+            }
+            
             // Swipe Left
-            if ((direction === 4 && (x > ($this.innerWidth() / 2) && x*x > y*y) || velocityX < -0.65)) {
+            if ((direction === 4 && (x > ($this.innerWidth() / 2) && !scrolling) || velocityX < -0.65)) {
               swipeRight = true;
             }
             // Swipe Right
-            else if ((direction === 2 && (x < (-1 * $this.innerWidth() / 2) && x*x > y*y) || velocityX > 0.65)) {
+            else if ((direction === 2 && (x < (-1 * $this.innerWidth() / 2) && !scrolling) || velocityX > 0.65)) {
               swipeLeft = true;
             }
 
