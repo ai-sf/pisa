@@ -168,7 +168,6 @@
         var panning = false;
         var swipeLeft = false;
         var swipeRight = false;
-        var scrolling = false;
 
         $this.hammer({
             prevent_default: false
@@ -180,26 +179,18 @@
 
             var direction = e.gesture.direction;
             var x = e.gesture.deltaX;
-            var y = e.gesture.deltaY;
             var velocityX = e.gesture.velocityX;
 
             $curr_slide = $slider.find('.active');
             $curr_slide.velocity({ translateX: x
                 }, {duration: 50, queue: false, easing: 'easeOutQuad'});
-            
-            //Detect Vertical Scrolling
-            if (0 < Math.abs(y)) {
-                scrolling = true;
-                swipeRight = false;
-                swipeLeft = false;
-            }
-            
+
             // Swipe Left
-            if ((direction === 4 && (x > ($this.innerWidth() / 2) && !scrolling) || velocityX < -0.65)) {
-              swipeRight = true;
+            if (direction === 4 && (x > ($this.innerWidth() / 2) || velocityX < -0.65)) {
+              swipeLeft = true;
             }
             // Swipe Right
-            else if ((direction === 2 && (x < (-1 * $this.innerWidth() / 2) && !scrolling) || velocityX > 0.65)) {
+            else if (direction === 2 && (x < (-1 * $this.innerWidth() / 2) || velocityX > 0.65)) {
               swipeLeft = true;
             }
 
@@ -232,19 +223,19 @@
             panning = false;
             curr_index = $slider.find('.active').index();
 
-            if (!swipeRight && !swipeLeft || scrolling || $slides.length <=1) {
+            if (!swipeRight && !swipeLeft || $slides.length <=1) {
               // Return to original spot
               $curr_slide.velocity({ translateX: 0
                   }, {duration: 300, queue: false, easing: 'easeOutQuad'});
             }
-            else if (swipeLeft && !scrolling) {
+            else if (swipeLeft) {
               moveToSlide(curr_index + 1);
               $curr_slide.velocity({translateX: -1 * $this.innerWidth() }, {duration: 300, queue: false, easing: 'easeOutQuad',
                                     complete: function() {
                                       $curr_slide.velocity({opacity: 0, translateX: 0}, {duration: 0, queue: false});
                                     } });
             }
-            else if (swipeRight && !scrolling) {
+            else if (swipeRight) {
               moveToSlide(curr_index - 1);
               $curr_slide.velocity({translateX: $this.innerWidth() }, {duration: 300, queue: false, easing: 'easeOutQuad',
                                     complete: function() {
@@ -253,7 +244,6 @@
             }
             swipeLeft = false;
             swipeRight = false;
-            scrolling = false;
 
             // Restart interval
             clearInterval($interval);
