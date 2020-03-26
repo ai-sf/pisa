@@ -188,17 +188,19 @@
                 }, {duration: 50, queue: false, easing: 'easeOutQuad'});
             
             //Detect Vertical Scrolling
-            if (Math.abs(x) < Math.abs(y)) {
+            if (0 < Math.abs(y)) {
                 scrolling = true;
+                swipeRight = false;
+                swipeLeft = false;
             }
             
             // Swipe Left
             if ((direction === 4 && (x > ($this.innerWidth() / 2) && !scrolling) || velocityX < -0.65)) {
-              swipeLeft = true;
+              swipeRight = true;
             }
             // Swipe Right
             else if ((direction === 2 && (x < (-1 * $this.innerWidth() / 2) && !scrolling) || velocityX > 0.65)) {
-              swipeRight = true;
+              swipeLeft = true;
             }
 
             // Make Slide Behind active slide visible
