@@ -230,19 +230,19 @@
             panning = false;
             curr_index = $slider.find('.active').index();
 
-            if (!swipeRight && !swipeLeft && !scrolling || $slides.length <=1) {
+            if (!swipeRight && !swipeLeft || scrolling || $slides.length <=1) {
               // Return to original spot
               $curr_slide.velocity({ translateX: 0
                   }, {duration: 300, queue: false, easing: 'easeOutQuad'});
             }
-            else if (swipeLeft) {
+            else if (swipeLeft && !scrolling) {
               moveToSlide(curr_index + 1);
               $curr_slide.velocity({translateX: -1 * $this.innerWidth() }, {duration: 300, queue: false, easing: 'easeOutQuad',
                                     complete: function() {
                                       $curr_slide.velocity({opacity: 0, translateX: 0}, {duration: 0, queue: false});
                                     } });
             }
-            else if (swipeRight) {
+            else if (swipeRight && !scrolling) {
               moveToSlide(curr_index - 1);
               $curr_slide.velocity({translateX: $this.innerWidth() }, {duration: 300, queue: false, easing: 'easeOutQuad',
                                     complete: function() {
