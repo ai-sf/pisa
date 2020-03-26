@@ -194,11 +194,11 @@
             
             // Swipe Left
             if ((direction === 4 && (x > ($this.innerWidth() / 2) && !scrolling) || velocityX < -0.65)) {
-              swipeRight = true;
+              swipeLeft = true;
             }
             // Swipe Right
             else if ((direction === 2 && (x < (-1 * $this.innerWidth() / 2) && !scrolling) || velocityX > 0.65)) {
-              swipeLeft = true;
+              swipeRight = true;
             }
 
             // Make Slide Behind active slide visible
