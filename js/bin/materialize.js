@@ -6814,9 +6814,9 @@ Picker.extend( 'pickadate', DatePicker )
 
             } else if (dragged) {
               // If dragging don't allow vertical scroll.
-              //e.preventDefault();
-              //e.stopPropagation();
-              //return false;
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
 
             } else {
               // Vertical scrolling.
@@ -6826,9 +6826,9 @@ Picker.extend( 'pickadate', DatePicker )
 
           if (dragged) {
             // If dragging don't allow vertical scroll.
-            //e.preventDefault();
-            //e.stopPropagation();
-            //return false;
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
           }
         }
 
@@ -6846,8 +6846,8 @@ Picker.extend( 'pickadate', DatePicker )
           timestamp = Date.now();
           requestAnimationFrame(autoScroll);
 
-          //e.preventDefault();
-          //e.stopPropagation();
+          e.preventDefault();
+          e.stopPropagation();
           return false;
         }
 
