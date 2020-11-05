@@ -1,14 +1,21 @@
 - image: img/corsi/python_19.png
-  title: Python
+  title: Python 2019
   info: Introduzione a Python per Laboratorio
   url: corso_python_19
   alt: Corso Python
   date: "2019-10-23"
   year: "19"
 - image: img/corsi/latex_19.png
-  title: LaTeX
+  title: LaTeX 2019
   info: Introduzione a LaTeX per Relazioni
   url: corso_latex_19
   alt: Corso LaTeX
   date: "2019-11-15"
   year: "19"
+- image: img/corsi/latex_20.png
+  title: LaTeX 2020
+  info: LaTeX base per Relazioni e Presentazioni
+  url: corso_latex_20
+  alt: Corso LaTeX
+  date: "2020-11-6"
+  year: "20"

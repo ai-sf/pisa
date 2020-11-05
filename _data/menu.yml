@@ -6,9 +6,11 @@
 - text: Corsi
   url: corsi
   subitems:
-   - text: Python
+   - text: LaTeX 2020
+     url: corso_latex_20
+   - text: Python 2019
      url: corso_python_19
-   - text: LaTeX
+   - text: LaTeX 2019
      url: corso_latex_19
 - text: Sito Nazionale
   url: http://www.ai-sf.it
